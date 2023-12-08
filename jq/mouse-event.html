@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+        section{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            width: 300px;
+            height: 500px;
+            background-color: palegreen;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h3>enter mouse</h3>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function(){
+          $(".container").mouseenter(function(){
+            $(this).css({backgroundColor:"black"});
+          });
+          $(".container").mouseleave(function(){
+            $(this).css({backgroundColor:"peru"})
+          })
+        });
+    </script>
+</body>
+</html>

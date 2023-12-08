@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       section{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+       }
+       .container{
+        width: 70%;
+        border: 2px solid black;
+        text-align: center;
+        padding: 10px;
+        margin: 0 auto;
+       }
+       .btn{
+        margin: 0 auto;
+       }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <h3>
+                slide up and slide down mathod
+            </h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut consectetur fuga quo unde incidunt. Iure
+                nostrum asperiores natus blanditiis illum, ea ipsam, consequuntur amet soluta dignissimos totam
+                aspernatur aut vel?
+            </p>
+        </div>
+        <div class="btn">
+            <button class="slideup">slideup</button>
+            <button class="sliddown">sliddown</button>
+            <button class="slidtoggel">slidtoggel</button>
+        </div>
+    </section>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".slideup").click(function () {
+                $(".container").slideUp();
+            });
+
+            $(".sliddown").click(function () {
+                $(".container").slideDown();
+            });
+            $(".slidtoggel").click(function () {
+                $(".container").slideToggle(3000);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td,
+        th,
+        tr {
+            outline: 2px solid black;
+            /* border-collapse:collapse ; */
+        }
+
+        td,
+        th {
+            padding: 7px;
+        }
+
+        .root {
+            display: flex;
+            justify-content: center;
+        }
+
+        tr:nth-child(1) {
+            background-color: rgba(0, 0, 0, 0.295);
+
+        }
+
+        tr:nth-child(2) {
+            background-color: aqua;
+        }
+
+        tr:nth-child(4) {
+            background-color: aqua;
+        }
+
+        tr:nth-child(6) {
+            background-color: aqua;
+        }
+
+        tr:nth-child(8) {
+            background-color: aqua;
+        }
+
+        tr:nth-child(10) {
+            background-color: aqua;
+        }
+
+        .heading {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Api coll</h1>
+    </div>
+    <div class="root">
+        <table id="root">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>username</th>
+                <th>email</th>
+                <th>button</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        const responce = async () => {
+            try {
+                const res = await fetch("https://jsonplaceholder.typicode.com/users");
+                const data = await res.json()
+                return data
+            } catch (e) {
+                console.log(e)
+            }
+        };
+
+        let root = document.getElementById("root")
+
+        responce().then((data) => {
+            console.log(data[0]);
+
+            data.forEach(card => {
+                let tr = document.createElement("tr");
+                root.appendChild(tr);
+
+                let td = document.createElement("td");
+                tr.appendChild(td);
+                td.innerHTML = card.id
+
+                let tdTwo = document.createElement("td");
+                tr.appendChild(tdTwo);
+                tdTwo.innerHTML = card.name
+
+                let tdTHree = document.createElement("td");
+                tr.appendChild(tdTHree);
+                tdTHree.innerHTML = card.username
+
+                let tdFour = document.createElement("td");
+                tr.appendChild(tdFour);
+                tdFour.innerHTML = card.email
+
+                let tdFive = document.createElement("td");
+                tr.appendChild(tdFive);
+                tdFive.innerHTML = `<button class="btn" id="btn">Delet</button>`
+                let btn = document.querySelectorAll(".btn");
+                btn.forEach(function (e) {
+                    e.addEventListener("click", function (ee) {
+                        let del = ee.target.parentNode.parentNode
+                        del.remove()
+                    })
+                })
+
+            });
+        }).then((e) => {
+            console.log(e)
+        });
+
+    </script>
+</body>
+
+</html>

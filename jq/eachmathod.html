@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 70%;
+            border: 2px solid black;
+            margin: 0 auto;
+            text-align: center;
+        }
+        li{
+            list-style: none;
+            box-shadow: 0px 0px 5px black;
+            font-size: 18px;
+            color: pink;
+            margin: 10px auto;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>
+            eachmathod in jquery
+        </h3>
+        <ul>
+            <li>black</li>
+            <li>whait</li>
+            <li>pink</li>
+            <li>yellow</li>
+            <li>red</li>
+        </ul>
+        <button id="btn">change text</button>
+        <button id="btn2">delet text</button>
+    </div>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("li").each(function(){
+        $(this).text("hello hareschaudhary")
+       });
+            });
+         $("#btn2").click(function(){
+           $("li").html("")
+         });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+       
+
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: peru;
+            margin: 20px;
+            text-align: center;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <p>
+                box one
+            </p>
+            <h3>
+                click me
+            </h3>
+        </div>
+        <div class="box">
+            <p>
+                box two
+            </p>
+            <h3>
+                click me
+            </h3>
+        </div>
+        <div class="box">
+            <p>
+                box three
+            </p>
+            <h3>
+                click me
+            </h3>
+        </div>
+        <div class="box">
+            <p>
+                box four
+            </p>
+            <h3>
+                click me
+            </h3>
+        </div>
+        <div class="box">
+            <p>
+                box five
+            </p>
+            <h3>
+                click me
+            </h3>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function(){
+            let boxwidth =200;
+           
+            $(".box").one("click",function(){
+                $(this).width(boxwidth)
+                boxwidth+=40;
+            });
+            $(".box").one("click",function(){
+                let hei =$(this).innerWidth();
+               $(this).html("box width"+"="+hei+"px")
+            })
+        })
+    </script>
+</body>
+
+</html>

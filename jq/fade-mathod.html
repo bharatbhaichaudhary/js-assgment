@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        section{
+            width: 100%;
+            height: 100vh;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            width: 50%;
+            text-align: center;
+        }
+        .box-two{
+            border: 2px solid black;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: peachpuff;
+        }
+        h3{
+            font-size: 25px;
+        }
+        button{
+            font-size: 22px;
+            padding: 8px 20px;
+            border-radius: 10px 0px;
+            background-color: rgb(65, 65, 205);
+            margin: 10px 10px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="box-one">
+                <h3>jquery fadein fadeout and fadetoggle mathod</h3>
+            </div>
+            <div class="box-two" id="box-two" >
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro earum minus cumque quia, itaque
+                    libero modi, voluptates dolores nesciunt voluptas tempora autem eos laborum ex non amet iusto neque
+                    pariatur accusamus dicta soluta esse reprehenderit et nisi? Corrupti adipisci ducimus ipsa debitis
+                    delectus iste aspernatur, odit eius ratione expedita deleniti vel mollitia in unde facere possimus
+                    tempora, molestias ipsum, officia dolor assumenda fugit est fugiat? Quidem quos ex hic possimus iste
+                    reprehenderit praesentium.
+                </p>
+            </div>
+            <div class="box-three">
+                <button class="btn-fadeout">fade out</button>
+                <button class="btn-fadein">fade in</button>
+                <button class="btn-fadetoggle">fade toggle</button>
+                <button class="btn-fadeto">fade to</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function(){
+            $(".btn-fadeout").click(function(){
+                $(".box-two").fadeOut(3000)
+            });
+            $(".btn-fadein").click(function(){
+              $(".box-two").fadeIn(2000)
+            });
+            $(".btn-fadetoggle").click(function(){
+                $(".box-two").fadeToggle(1000)
+            });
+            $(".btn-fadeto").click(function(){
+                $(".box-two").fadeTo(1000,0.3)
+                console.log(ok);
+            })
+        })
+          
+        
+    </script>
+</body>
+
+</html>

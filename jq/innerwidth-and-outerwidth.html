@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+        select{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onresize="resize()">
+     <section>
+        <div class="container" id="container">
+
+        </div>
+     </section>
+    <script>
+        function resize() {
+            console.clear()
+            let In = "inner width" + "=" + window.innerWidth;
+            let Oh = "outer width" + "=" + window.outerWidth;
+            document.getElementById("container").innerHTML =In+"<br>"+Oh ;
+        }
+   
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            text-align: center;
+            border-radius:50%;
+            padding: 10px 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <h3>show and hidden</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, qui deleniti maxime quam rem deserunt
+                dolore, est et a totam adipisci ratione fugiat distinctio eaque maiores, harum earum recusandae ducimus!
+            </p>
+        </div>
+        <div class="box">
+            <button class="showbtn">show</button>
+            <button class="hiddenbtn">hidden</button>
+            <button class="toggl">toggl</button>
+        </div>
+    </section>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".showbtn").click(function(){
+                $(".container ").show(1000)
+            });
+
+            $(".hiddenbtn").click(function(){
+                $(".container ").hide(3000,)
+            });
+            $(".toggl").click(function(){
+                $(".container").toggle(3000)
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 70%;
+            margin: 100px auto;
+            border: 2px solid black;
+            text-align: center;
+            padding: 100px 0;
+        }
+        p,h3,h2{
+            padding: 10px 0;
+            border: 2px solid red;
+            color: white;
+            font-weight: bold;
+            background-color: black;
+        }
+        .h3{
+            background-color: aqua;
+        }
+        .h4{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3> target mathod in react</h3>
+        <h2> hello im hares</h2>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi recusandae provident fugit. Voluptas ab
+            autem ad eum maxime, cum accusamus inventore consequuntur odio nulla suscipit molestiae consequatur eos
+            temporibus voluptate!
+        </p>
+        <h3 class="h3"></h3>
+        <h4 class="h4"></h4>
+    </div>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".box").on("click",function(){
+                $(".h3").html("you are click :"+event.target.nodeName);
+                if(event.target.nodeName=="H2"){
+                    $(".h4").html("hello i am fine")
+                }else{
+                    $(".h4").html("dont tach me")
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

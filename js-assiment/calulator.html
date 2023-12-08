@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .section {
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.463);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calutator {
+            width: 400px;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        input {
+            margin: 20px 0;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 70%;
+            margin: 0 auto;
+        }
+        button{
+            font-size: 20px;
+            padding: 3px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div class="calutator">
+            <h3>Maths opration</h3>
+            <div class="inp-one">
+                <label for="inpOne">Enter 1st number:</label>
+                <input type="number" id="inpOne">
+            </div>
+            <div class="inp-one">
+                <label for="inpTwo">Enter 1st number:</label>
+                <input type="number" id="inpTwo">
+            </div>
+
+            <div class="flex">
+                <div class="button">
+                    <button value="+">+</button>
+                    <button value="-">-</button>
+                    <button value="*">*</button>
+                    <button value="/">/</button>
+                    <button value="clean">clean</button>
+                </div>
+                <div class="result">
+                    <h3 >anser is <span id="answer">00</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+         let anser 
+        let button =document.querySelectorAll("button")
+        let value =document.querySelector("#answer")
+        button.forEach(function(e){
+            e.addEventListener("click",function(ee){
+               let inpOne =  document.getElementById("inpOne").value
+               let inpTwo = document.getElementById("inpTwo").value
+                if(ee.target.value=="-"){
+                    anser=parseInt(inpOne)-parseInt(inpTwo)
+                }
+                if(ee.target.value=="*"){
+                    anser=parseInt(inpOne)*parseInt(inpTwo)
+                }
+                if(ee.target.value=="/"){
+                    anser=parseInt(inpOne)/parseInt(inpTwo)
+                }
+                if(ee.target.value=="+"){
+                    anser=parseInt(inpOne)+parseInt(inpTwo)
+                }
+                if(ee.target.value=="clean"){
+                    value.innerHTML=`00`
+                }
+                value.innerHTML= anser
+            })
+        })
+    </script>
+</body>
+
+</html>

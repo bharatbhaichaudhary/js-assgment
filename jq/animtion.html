@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      section{
+        width: 100%;
+        height: 100vh;
+      }
+      .container{
+        width: 300px;
+        height: 200px;
+        border: 2px solid black;
+        text-align: center;
+        position: relative;
+      }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <h3>
+                animation in jquery
+            </h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad atque necessitatibus eaque blanditiis
+                delectus cumque assumenda temporibus harum maxime eos quod maiores dolorem odio voluptate, corporis vero
+                accusamus. Vitae, numquam.
+
+            </p>
+        </div>
+        <div class="btn">
+             <button class="animation">animat</button>
+        </div>
+    </section>
+
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".animation").click(function(){
+                $(".container").animate(
+                 {
+                    left:'50%',
+                    top :'200px',
+                    borderWidth:'10px ',
+                    width:'+100px'
+                    
+                    
+                 },
+                 2000
+                )
+            })
+        })
+    </script>
+</body>
+
+</html>

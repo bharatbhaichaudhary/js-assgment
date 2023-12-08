@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1250px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box{
+            width: 300px;
+            height: 250px;
+            margin: 10px;
+            text-align: right;   
+        }
+        button{
+            font-size: 25px;
+            padding: 2px;
+            background-color: rgb(43, 43, 158);
+            margin: 5px;
+        }
+        .box-one{
+            background-image: url(./images/img-\(1\).jpg);
+            background-size: cover;
+        }
+        .box-two{
+            background-image: url(./images/img-\(2\).jpg);
+            background-size: cover;
+        }
+        .box-three{
+            background-image: url(./images/img-\(6\).jpg);
+            background-size: cover;
+        }
+        .box-four{
+            background-image: url(./images/img-\(4\).jpg);
+            background-size: cover;
+        }
+        .box-five{
+            background-image: url(./images/img-\(5\).jpg);
+            background-size: cover;
+        }
+        .box-six{
+            background-image: url(./images/img-\(6\).jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class=" box box-one">
+            <button>Delet</button>
+        </div>
+        <div class=" box box-two">
+            <button>Delet</button>
+        </div>
+        <div class="box box-three">
+            <button>Delet</button>
+        </div>
+        <div class="box box-four">
+            <button>Delet</button>
+        </div>
+        <div class="box box-five">
+            <button>Delet</button>
+        </div>
+        <div class="box box-six">
+            <button>Delet</button>
+        </div>
+    </div>
+    <script>
+        let button = document.querySelectorAll("button")
+        button.forEach(function(e){
+            e.addEventListener("click",function(ee){
+                let delet =ee.target.parentNode
+                delet.remove()
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+        h3{
+            text-align: center;
+            padding-top: 100px;
+            font-size: 100px;
+            color: white;
+            text-shadow: 0px 0px 5px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        $(document).ready(function(){
+            let clas =$("div").hasClass("boox")
+           if(clas==true){
+            $(".box").html("<h3>yes this class exists</h3>")
+           }else{
+            $(".box").html("<h3>this class does not exist</h3>")
+           }
+        });
+    </script>
+</body>
+</html>

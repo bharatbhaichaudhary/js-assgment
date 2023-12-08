@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 50%;
+            height: 50vh;
+            /* background: pink; */
+            box-shadow: 0px 0px 100px black;
+            margin: 30px;
+        }
+        .move{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <div class="move">
+
+    </div>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(document).mouseover(function(event){
+                $(".box").text("y ="+event.pageY+"x ="+event.pageX);
+               var x=event.pageX;
+               var y=event.pageY;
+               $(".move").offset({top:y,left:x});
+              
+            })
+        })
+    </script>
+</body>
+</html>

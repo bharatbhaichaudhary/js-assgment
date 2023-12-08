@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="margin:20px auto; width: 400px; text-align: center; box-shadow: 0px 0px 6px black; padding: 20px;"
+        class="container">
+        <div class="heading">
+            <h1>
+                change gackgroundColor
+            </h1>
+        </div>
+        <div class="box">
+            <button class="play">play</button>
+            <button class="stop">stop</button>
+        </div>
+    </div>
+    <script>
+        // *************************
+        function randomcolor() {
+            let hax = "0123456789abcdef";
+            let color = "#"
+            for (i = 0; i < 6; i++) {
+                color += hax[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        // ***********************
+      
+
+        let interwal;
+          // ***********************
+        function play() {
+            interwal = setInterval(bgchang, 1000)
+            function bgchang() {
+                document.querySelector("body").style.backgroundColor = randomcolor();
+            }
+        }
+          // ***********************
+        function stopp() {
+            clearInterval(interwal)
+        }
+          // ***********************
+        document.querySelector(".play").addEventListener("click", play)
+        document.querySelector(".stop").addEventListener("click", stopp)
+
+    </script>
+</body>
+
+</html>

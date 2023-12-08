@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .img {
+      width: 210px;
+      height: 200px;
+      position: relative;
+      margin: 10px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .imgTwo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      width: 1250px;
+      margin: 0 auto;
+    }
+    #top-btn{
+      font-size: 20px;
+      background-color: black;
+      margin: 10px 0;
+      color: white;
+      cursor:pointer;
+    }
+    
+    .center{
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="center">
+    <button class="btn" id="top-btn">click to add images</button>
+  </div>
+  <div class="row" id="row">
+
+  </div>
+  <script>
+    let row = document.querySelector("#row")
+    let id = 10;
+    document.querySelector(".btn").addEventListener("click", function () {
+      let element = document.createElement("div")
+      element.setAttribute("class", "img")
+      element.innerHTML = `<img src="https://picsum.photos/id/${id}/200/300" alt="">`
+      let lol = document.createElement("div")
+      lol.setAttribute("class", "imgTwo")
+      element.appendChild(lol)
+      row.appendChild(element)
+      // ************************
+      let btn = document.querySelectorAll(".imgTwo")
+      btn.forEach(function (e) {
+        e.innerHTML = ""
+        let elementTwo = document.createElement("button")
+        elementTwo.setAttribute("class", "click")
+        elementTwo.innerHTML = "Delet"
+        e.appendChild(elementTwo)
+        //  **************
+        let button = document.querySelectorAll(".click")
+        let img = document.querySelector(".img")
+        button.forEach(function (e) {
+          e.addEventListener("click", function (ee) {
+            let delet = ee.target.parentNode.parentNode
+            delet.remove()
+            console.log(ee.target.parentNode)
+          })
+        })
+      })
+      id++
+    });
+
+
+
+
+
+  </script>
+</body>
+
+</html>

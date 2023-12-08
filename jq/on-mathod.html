@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-one{
+            width: 50%;
+            height: 50vh;
+            box-shadow: 0px 0px 100px black;
+            margin: 100px auto;
+            text-align: center;
+            padding: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-one">
+        <h3>hello</h3>
+    </div>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $(".box-one").on("click dblclick mouseover mouseout",function(event){
+            $("h3").html("event = "+event.type)
+            if(event.type=="click"){
+               $(".box-one").css("background","red");
+            }else if(event.type=="dblclick"){
+                $(".box-one").css("background","green"); 
+            }else if(event.type=="mouseover"){
+                $(".box-one").css("background","pink"); 
+            }else if(event.type=="mouseout"){
+                $(".box-one").css("background","yellow"); 
+            }
+           })
+        });
+    </script>
+</body>
+</html>

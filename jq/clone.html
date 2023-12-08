@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .box{
+            width: 40%;
+            text-align: center;
+            box-shadow: 0px 0px 10px black;
+            height: 300px;
+            padding: 10px;
+            border-radius:10px ;
+        }
+        .box-two{
+            position: relative;
+        }
+        .btn{
+            font-size: 25px;
+            padding: 8px 20px;
+            font-weight: 700;
+            border-radius: 10px;
+            background-color: rgb(69, 69, 210);
+            position: absolute;
+            bottom: 0px;
+            left: 33%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="box box-one">
+                <h1>
+                    clone
+                </h1>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, quia exercitationem porro obcaecati
+                    voluptate aspernatur consequatur. Maiores repudiandae mollitia odit quaerat, quia repellat
+                    perferendis voluptatum ullam, nemo non atque nisi!
+                </p>
+            </div>
+            <div class="box box-two">
+               <button class="btn">clone</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function(){
+            $(".btn").one("click",function(){
+                $(".box-one h1,p").clone().appendTo(".box-two")
+            })
+        })
+    </script>
+</body>
+
+</html>
